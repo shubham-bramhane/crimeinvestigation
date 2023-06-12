@@ -10,6 +10,8 @@ class AdminController extends Controller
 {
     public function index()
     {
+        // $token = JWTAuth::attempt(auth()->user());
+        // dd($token);
         return redirect()->route('admin.cases.index');
         // return view('admin.index');
     }

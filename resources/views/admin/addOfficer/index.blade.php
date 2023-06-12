@@ -34,8 +34,8 @@
                         @foreach ($officers as $officer)
                             <tr>
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <th><img src="{{ asset($officer->Image()) }}" alt="{{ $officer->name }}"
-                                        style="width: 80px"></th>
+                                <th><img @if ($officer->profile_pic) src="{{ asset($officer->Image()) }}"  @else src={{ asset('images/officer.png') }} @endif
+                                        alt="{{ $officer->name }}" style="width: 80px"></th>
                                 <th>{{ $officer->name }}</th>
                                 <th>{{ $officer->email }}</th>
                                 <th>{{ $officer->mobile }}</th>

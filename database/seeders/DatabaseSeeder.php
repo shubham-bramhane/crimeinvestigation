@@ -31,8 +31,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('1234567890'),
         ]);
 
-        User::factory(10)->create([
-            'is_admin' => false,
-        ]);
+        // User::factory(10)->create([
+        //     'is_admin' => false,
+        // ]);
     }
 }
