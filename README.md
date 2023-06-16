@@ -58,7 +58,7 @@ To install and set up the Crime Investigation and Suspect Prediction System, fol
 
 3. Configure the database connection settings in the `.env` file.
 
-4. Run the database migrations and seed the initial data by executing `php artisan migrate --seed`.
+4. Run the database migrations and seed the initial data by executing `php artisan migrate:fresh --seed`.
 
 5. Generate an application key by running `php artisan key:generate`.
 
