@@ -43,7 +43,7 @@
                                 <td class="d-flex justify-content-end" style="gap: 5px">
                                     <a href="{{ route('admin.officer.edit', $officer->id) }}"
                                         class="btn btn-info mr-2 text-white">Edit</a>
-                                    <form action="{{ route('admin.officer.destroy', $officer->id) }}" method="post">
+                                    <form id="deleteForm"  action="{{ route('admin.officer.destroy', $officer->id) }}" method="post">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-danger">Delete</button>
@@ -56,4 +56,19 @@
             </div>
         </div>
     </div>
+@endsection
+
+
+@section('script')
+
+<script>
+    document.getElementById('deleteForm').addEventListener('submit', function(event) {
+        var confirmed = confirm('Are you sure you want to delete this case?');
+        if (!confirmed) {
+            event.preventDefault(); // Prevent form submission if not confirmed
+        }
+    });
+</script>
+
+
 @endsection
